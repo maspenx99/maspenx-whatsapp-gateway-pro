@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  whatsapp-pro:
+    build: .
+    container_name: maspenx-wa-pro
+    ports:
+      - "3060:21465"
+    environment:
+      - DEBUG=true
+      - PORT=21465
+      - HEADLESS=true
+      - MULTI_DEVICE=true
+      - WEBHOOK_URL= # Masukkan saat tersedia
+      - TELEGRAM_BOT_TOKEN= # Masukkan saat tersedia
+      - TELEGRAM_CHAT_ID= # Masukkan saat tersedia
+    volumes:
+      - ./media:/app/media
+    restart: unless-stopped
